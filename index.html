@@ -1,482 +1,1261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amila Silva – Senior Software Engineer | Java · Spring Boot · AWS</title>
+<meta name="description" content="Amila Silva is a Senior Software Engineer with 6+ years of experience in Java, Spring Boot, AWS, and scalable microservices. Based in Colombo, Sri Lanka.">
+<meta name="keywords" content="Amila Silva, Senior Software Engineer, Java, Spring Boot, AWS, Microservices, Sri Lanka">
+<meta property="og:title" content="Amila Silva – Senior Software Engineer">
+<meta property="og:description" content="6+ years building scalable cloud-native microservices with Java, Spring Boot, and AWS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --cream: #FDFAF5;
+    --warm-white: #FFF8F0;
+    --ink: #1A1410;
+    --ink-light: #3D3530;
+    --accent: #C8622A;
+    --accent-light: #E8845A;
+    --accent-pale: #FFF0E8;
+    --gold: #D4A843;
+    --gold-light: #F0C870;
+    --teal: #1B7A6E;
+    --teal-light: #2A9E8F;
+    --glass-bg: rgba(255,255,255,0.65);
+    --glass-border: rgba(200,98,42,0.15);
+    --shadow-warm: 0 20px 60px rgba(200,98,42,0.12);
+    --shadow-soft: 0 8px 32px rgba(26,20,16,0.08);
+    --r: 16px;
+  }
 
-  <title>Amila Silva - Oracle Certified | AWS Certified (OCJP) | Java Developer</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  html { scroll-behavior: smooth; }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    line-height: 1.65;
+  }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  /* ─── ANIMATED BACKGROUND ─── */
+  .bg-canvas {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 900px 600px at 10% 20%, rgba(200,98,42,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 700px 500px at 90% 80%, rgba(212,168,67,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 600px 400px at 50% 50%, rgba(27,122,110,0.04) 0%, transparent 70%),
+      var(--cream);
+  }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  .orb {
+    position: fixed; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0;
+    animation: floatOrb 18s ease-in-out infinite;
+  }
+  .orb-1 { width: 500px; height: 500px; background: rgba(200,98,42,0.08); top: -100px; left: -100px; animation-delay: 0s; }
+  .orb-2 { width: 400px; height: 400px; background: rgba(212,168,67,0.07); bottom: 100px; right: -80px; animation-delay: -6s; }
+  .orb-3 { width: 300px; height: 300px; background: rgba(27,122,110,0.06); top: 50%; left: 60%; animation-delay: -12s; }
 
-  <!-- =======================================================
-  * Template Name: iPortfolio - v3.8.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+  @keyframes floatOrb {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(30px,-20px) scale(1.05); }
+    66% { transform: translate(-20px,30px) scale(0.95); }
+  }
 
-<style type="text/css">
-  .icon-box-custom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120px; /* Adjust as needed */
-}
+  /* ─── LAYOUT ─── */
+  section { position: relative; z-index: 1; }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
 
-.icon-box-custom img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ensures images fit without distortion */
-}
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 16px 0;
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(253,250,245,0.85);
+    border-bottom: 1px solid rgba(200,98,42,0.1);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 24px rgba(200,98,42,0.1); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--ink-light);
+    font-size: 14px; font-weight: 500; letter-spacing: 0.5px;
+    transition: color 0.2s; position: relative; padding-bottom: 2px;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px;
+    background: var(--accent); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { transform: scaleX(1); }
 
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px 0 80px;
+    position: relative;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-pale); border: 1px solid rgba(200,98,42,0.25);
+    border-radius: 100px; padding: 8px 18px;
+    font-size: 13px; font-weight: 600; color: var(--accent);
+    letter-spacing: 0.5px; margin-bottom: 24px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before { content: '●'; font-size: 8px; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 6vw, 76px);
+    font-weight: 900; line-height: 1.08;
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+  .hero-title em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 18px; color: var(--ink-light); max-width: 480px;
+    margin-bottom: 36px; line-height: 1.75;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+
+  .hero-stats {
+    display: flex; gap: 40px; margin-bottom: 40px;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+  .stat-item { }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700; color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label { font-size: 13px; color: var(--ink-light); margin-top: 4px; }
+
+  .hero-cta {
+    display: flex; gap: 16px; align-items: center;
+    animation: fadeUp 0.6s ease 0.4s both;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: #fff; padding: 14px 32px; border-radius: 100px;
+    font-size: 15px; font-weight: 600; text-decoration: none;
+    box-shadow: 0 8px 24px rgba(200,98,42,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(200,98,42,0.45); }
+  .btn-secondary {
+    color: var(--ink); font-size: 15px; font-weight: 500;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--accent); }
+
+  /* hero avatar */
+  .hero-visual { animation: fadeUp 0.6s ease 0.2s both; }
+  .avatar-frame {
+    position: relative; width: 360px; height: 440px; margin: 0 auto;
+  }
+  .avatar-bg {
+    position: absolute; inset: 0; border-radius: 40% 60% 60% 40% / 50% 50% 60% 40%;
+    background: linear-gradient(135deg, var(--accent-pale) 0%, rgba(212,168,67,0.15) 100%);
+    animation: morphShape 12s ease-in-out infinite;
+  }
+  @keyframes morphShape {
+    0%,100% { border-radius: 40% 60% 60% 40% / 50% 50% 60% 40%; }
+    33% { border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%; }
+    66% { border-radius: 50% 50% 60% 40% / 60% 40% 50% 50%; }
+  }
+  .avatar-img {
+    position: absolute; inset: 20px;
+    border-radius: 38% 62% 58% 42% / 48% 52% 58% 42%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8d5c4 0%, #f5e6d3 100%);
+    display: flex; align-items: flex-end; justify-content: center;
+    animation: morphShape 12s ease-in-out infinite;
+  }
+  .avatar-svg {
+    width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  }
+  .avatar-placeholder {
+    font-size: 140px; line-height: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+  }
+  .badge-float {
+    position: absolute;
+    background: var(--glass-bg); backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px; padding: 10px 16px;
+    box-shadow: var(--shadow-warm);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 600;
+  }
+  .badge-float-1 { top: 20px; right: -30px; animation: float1 6s ease-in-out infinite; }
+  .badge-float-2 { bottom: 40px; left: -40px; animation: float2 7s ease-in-out infinite; }
+  .badge-float-3 { top: 180px; left: -50px; animation: float1 8s ease-in-out infinite reverse; }
+  .badge-float-4 { top: -20px; left: 40px; animation: float2 9s ease-in-out infinite; }
+  .badge-float-5 { bottom: 10px; right: -40px; animation: float1 7s ease-in-out 2s infinite; }
+  .badge-float-6 { top: 300px; right: -44px; animation: float2 6s ease-in-out 1s infinite reverse; }
+  @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-sub { font-size: 17px; color: var(--ink-light); max-width: 560px; }
+
+  /* ─── GLASS CARD ─── */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .glass-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-warm); }
+
+  /* ─── ABOUT ─── */
+  #about { padding: 100px 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .about-text p { font-size: 17px; color: var(--ink-light); margin-bottom: 20px; line-height: 1.8; }
+  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .highlight-item {
+    padding: 18px 20px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-pale), rgba(212,168,67,0.08));
+    border-left: 3px solid var(--accent);
+  }
+  .highlight-item .hi-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700; color: var(--accent);
+  }
+  .highlight-item .hi-label { font-size: 13px; color: var(--ink-light); margin-top: 2px; }
+  .about-visual { display: flex; flex-direction: column; gap: 16px; }
+  .about-card { padding: 24px; }
+  .about-card-icon { font-size: 28px; margin-bottom: 12px; }
+  .about-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .about-card p { font-size: 14px; color: var(--ink-light); }
+
+  /* ─── EXPERIENCE ─── */
+  #experience { padding: 100px 0; background: linear-gradient(180deg, transparent, rgba(200,98,42,0.03), transparent); }
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--gold), var(--teal));
+    border-radius: 2px;
+  }
+  .timeline-item { position: relative; margin-bottom: 48px; }
+  .timeline-dot {
+    position: absolute; left: -28px; top: 6px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--cream);
+    box-shadow: 0 0 0 3px var(--accent);
+  }
+  .timeline-item:nth-child(2) .timeline-dot { background: var(--gold); box-shadow: 0 0 0 3px var(--gold); }
+  .timeline-item:nth-child(3) .timeline-dot { background: var(--teal); box-shadow: 0 0 0 3px var(--teal); }
+  .timeline-item:nth-child(4) .timeline-dot { background: var(--gold-light); box-shadow: 0 0 0 3px var(--gold-light); }
+  .exp-card { padding: 28px 32px; }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+  .exp-role { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; }
+  .exp-company { font-size: 15px; color: var(--accent); font-weight: 600; margin-top: 2px; }
+  .exp-date { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--ink-light); background: var(--accent-pale); padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
+  .exp-desc { font-size: 14px; color: var(--ink-light); line-height: 1.75; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .tag { font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 100px; background: var(--accent-pale); color: var(--accent); }
+  .tag.teal { background: rgba(27,122,110,0.1); color: var(--teal); }
+  .tag.gold { background: rgba(212,168,67,0.12); color: #8a6a00; }
+
+  /* ─── SKILLS ─── */
+  #skills { padding: 100px 0; }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+  .skill-category { padding: 28px; }
+  .skill-cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .skill-cat-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .skill-cat-icon.orange { background: var(--accent-pale); }
+  .skill-cat-icon.teal { background: rgba(27,122,110,0.1); }
+  .skill-cat-icon.gold { background: rgba(212,168,67,0.12); }
+  .skill-cat-name { font-weight: 700; font-size: 16px; }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-pill {
+    font-size: 13px; padding: 6px 14px; border-radius: 100px;
+    background: rgba(26,20,16,0.05);
+    color: var(--ink-light); font-weight: 500;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .skill-pill:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
+
+  /* ─── PROJECTS ─── */
+  #projects { padding: 100px 0; }
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+  .project-card { padding: 28px; display: flex; flex-direction: column; }
+  .project-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 18px; }
+  .project-icon.orange { background: linear-gradient(135deg, var(--accent-pale), rgba(200,98,42,0.15)); }
+  .project-icon.teal { background: linear-gradient(135deg, rgba(27,122,110,0.1), rgba(27,122,110,0.2)); }
+  .project-icon.gold { background: linear-gradient(135deg, rgba(212,168,67,0.1), rgba(212,168,67,0.2)); }
+  .project-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+  .project-card p { font-size: 14px; color: var(--ink-light); line-height: 1.7; flex: 1; }
+  .project-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; transition: gap 0.2s; }
+  .project-link:hover { gap: 10px; }
+
+  /* ─── CERTIFICATIONS ─── */
+  #certifications { padding: 100px 0; }
+  .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
+  .cert-card { padding: 28px; display: flex; align-items: center; gap: 20px; }
+  .cert-badge { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0; }
+  .cert-badge.aws { background: linear-gradient(135deg, rgba(255,153,0,0.15), rgba(255,153,0,0.25)); }
+  .cert-badge.oracle { background: linear-gradient(135deg, rgba(200,98,42,0.15), rgba(200,98,42,0.25)); }
+  .cert-badge.award { background: linear-gradient(135deg, rgba(212,168,67,0.15), rgba(212,168,67,0.25)); }
+  .cert-badge.volunteer { background: linear-gradient(135deg, rgba(27,122,110,0.15), rgba(27,122,110,0.25)); }
+  .cert-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .cert-info p { font-size: 13px; color: var(--ink-light); }
+  .cert-info a { font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 600; margin-top: 6px; display: inline-flex; align-items: center; gap: 4px; }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { padding: 100px 0; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+  .testimonial-card { padding: 32px; }
+  .testimonial-quote { font-size: 48px; line-height: 0.8; color: var(--accent); opacity: 0.4; font-family: 'Playfair Display', serif; margin-bottom: 16px; }
+  .testimonial-text { font-size: 15px; color: var(--ink-light); line-height: 1.75; font-style: italic; margin-bottom: 24px; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-pale), rgba(212,168,67,0.2)); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .author-name { font-weight: 700; font-size: 14px; }
+  .author-role { font-size: 12px; color: var(--ink-light); }
+  .stars { color: var(--gold); font-size: 13px; margin-bottom: 4px; }
+
+  /* ─── CONTACT ─── */
+  #contact { padding: 100px 0; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .contact-info { }
+  .contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+  .contact-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--accent-pale); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 18px; flex-shrink: 0; }
+  .contact-item-text h4 { font-weight: 600; font-size: 15px; }
+  .contact-item-text a, .contact-item-text p { font-size: 14px; color: var(--ink-light); text-decoration: none; }
+  .contact-item-text a:hover { color: var(--accent); }
+  .contact-form { padding: 36px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+  .form-group input, .form-group textarea {
+    width: 100%; padding: 12px 16px; border-radius: 10px;
+    border: 1.5px solid rgba(200,98,42,0.15);
+    background: rgba(255,255,255,0.7);
+    font-family: 'DM Sans', sans-serif; font-size: 14px;
+    color: var(--ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(200,98,42,0.12);
+  }
+  .form-group textarea { height: 120px; resize: vertical; }
+  .social-links { display: flex; gap: 12px; margin-top: 36px; }
+  .social-link {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--glass-bg); backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-light); font-size: 18px; text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .social-link:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 48px 0 32px;
+    border-top: 1px solid rgba(200,98,42,0.12);
+    text-align: center;
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+  .footer-tagline { font-size: 14px; color: var(--ink-light); margin-bottom: 24px; }
+  .footer-copy { font-size: 13px; color: rgba(26,20,16,0.4); margin-top: 24px; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .skills-grid, .projects-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .cert-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 600px) {
+    .skills-grid, .projects-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .about-highlights { grid-template-columns: 1fr; }
+    .hero-stats { gap: 24px; }
+  }
+
+  /* ─── LEET CODE TICKER ─── */
+  .leet-ticker-wrap {
+    overflow: hidden; background: linear-gradient(135deg, var(--ink) 0%, #2a1a10 100%);
+    padding: 10px 0; position: relative;
+  }
+  .leet-ticker { display: flex; gap: 40px; white-space: nowrap; animation: tickerScroll 30s linear infinite; width: max-content; }
+  .leet-ticker-item { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--gold-light); opacity: 0.85; }
+  .leet-ticker-item span { color: var(--accent-light); }
+  @keyframes tickerScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* progress bars */
+  .exp-bar { height: 4px; background: rgba(200,98,42,0.12); border-radius: 2px; margin-top: 12px; overflow: hidden; }
+  .exp-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--gold)); border-radius: 2px; width: 0; transition: width 1.2s ease; }
+  /* ─── FORM VALIDATION ─── */
+  .field-error {
+    display: block; font-size: 12px; color: #d94f3d; margin-top: 5px;
+    min-height: 16px; font-weight: 500; opacity: 0;
+    transform: translateY(-4px); transition: opacity 0.2s, transform 0.2s;
+  }
+  .field-error.visible { opacity: 1; transform: translateY(0); }
+  .form-group input.invalid, .form-group textarea.invalid {
+    border-color: #d94f3d !important;
+    box-shadow: 0 0 0 3px rgba(217,79,61,0.12) !important;
+  }
+  .form-group input.valid, .form-group textarea.valid {
+    border-color: var(--teal) !important;
+    box-shadow: 0 0 0 3px rgba(27,122,110,0.1) !important;
+  }
 </style>
-
+</head>
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+<!-- Background -->
+<div class="bg-canvas"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+<!-- Nav -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">AS</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary" style="padding:10px 22px;font-size:13px;">Hire Me →</a>
+  </div>
+</nav>
 
-      <div class="profile">
-        <img src="assets/img/pro-pic-small.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Amila Silva</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://www.linkedin.com/in/amilasilva7" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/amilasilva7" class="github"><i class="bx bxl-github"></i></a>
-          <a href="mailto:amilasilvapvt@gmail.com" class="envelope"><i class="bx bxs-envelope"></i></a>
-          <a href="https://twitter.com/Amila_OS" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://api.whatsapp.com/send?phone=+94774244755&text=Hello%20Amila%20Silva%2C%20I%20found%20your%20whatsapp%20contact%20from%20your%20portfolio." class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
-          
+<!-- LeetCode Ticker -->
+<div class="leet-ticker-wrap" style="margin-top:72px;">
+  <div class="leet-ticker">
+    <span class="leet-ticker-item">Two Sum <span>#HashMap</span></span>
+    <span class="leet-ticker-item">Longest Substring <span>#SlidingWindow</span></span>
+    <span class="leet-ticker-item">Binary Tree BFS <span>#BFS</span></span>
+    <span class="leet-ticker-item">Merge Intervals <span>#Sorting</span></span>
+    <span class="leet-ticker-item">Valid Parentheses <span>#Stack</span></span>
+    <span class="leet-ticker-item">Number of Islands <span>#DFS</span></span>
+    <span class="leet-ticker-item">Top K Frequent <span>#Heap</span></span>
+    <span class="leet-ticker-item">Climbing Stairs <span>#DynamicProgramming</span></span>
+    <span class="leet-ticker-item">Coin Change <span>#DynamicProgramming</span></span>
+    <span class="leet-ticker-item">LRU Cache <span>#LinkedList</span></span>
+    <span class="leet-ticker-item">Word Search <span>#Backtracking</span></span>
+    <span class="leet-ticker-item">Merge K Lists <span>#Heap</span></span>
+    <span class="leet-ticker-item">Trapping Rain Water <span>#TwoPointers</span></span>
+    <span class="leet-ticker-item">Find Median Streams <span>#Heap</span></span>
+    <span class="leet-ticker-item">Serialize Tree <span>#DFS</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="leet-ticker-item">Two Sum <span>#HashMap</span></span>
+    <span class="leet-ticker-item">Longest Substring <span>#SlidingWindow</span></span>
+    <span class="leet-ticker-item">Binary Tree BFS <span>#BFS</span></span>
+    <span class="leet-ticker-item">Merge Intervals <span>#Sorting</span></span>
+    <span class="leet-ticker-item">Valid Parentheses <span>#Stack</span></span>
+    <span class="leet-ticker-item">Number of Islands <span>#DFS</span></span>
+    <span class="leet-ticker-item">Top K Frequent <span>#Heap</span></span>
+    <span class="leet-ticker-item">Climbing Stairs <span>#DynamicProgramming</span></span>
+    <span class="leet-ticker-item">Coin Change <span>#DynamicProgramming</span></span>
+    <span class="leet-ticker-item">LRU Cache <span>#LinkedList</span></span>
+    <span class="leet-ticker-item">Word Search <span>#Backtracking</span></span>
+    <span class="leet-ticker-item">Merge K Lists <span>#Heap</span></span>
+    <span class="leet-ticker-item">Trapping Rain Water <span>#TwoPointers</span></span>
+    <span class="leet-ticker-item">Find Median Streams <span>#Heap</span></span>
+    <span class="leet-ticker-item">Serialize Tree <span>#DFS</span></span>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span>Software Engineer · Singapore 🇸🇬 · Open to connect</span>
+        </div>
+        <h1 class="hero-title">
+          Optimistic<br><em>Programmer.</em><br>System Design Enthusiast.
+        </h1>
+        <p class="hero-sub">
+          Senior Software Engineer crafting scalable microservices and cloud-native solutions with Java, Spring Boot & AWS — with a deep passion for system design and architecture that <em>just works</em> at scale.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">6+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100K</div>
+            <div class="stat-label">Concurrent Users</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Live UK Products</div>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">Let's Talk <i class="fas fa-arrow-right"></i></a>
+          <a href="https://www.linkedin.com/in/amilasilva7" target="_blank" class="btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
         </div>
       </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#techstack" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Tech-Stack</span></a></li>
-          <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Testimonials</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Amila Silva</h1>
-      <p>I'm a <span class="typed" data-typed-items="Oracle Certified | Java Developer, Software Engineer, Back-end Developer, Full-stack Engineer"></span></p>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/pro-pic-small.png" class="img-fluid" alt="">
+      <div class="hero-visual">
+        <div class="avatar-frame">
+          <div class="avatar-bg"></div>
+          <div class="avatar-img">
+            <div class="avatar-svg">
+              <span class="avatar-placeholder">👨🏽‍💻</span>
+            </div>
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Senior Software Engineer &amp; Web Developer.</h3>
-            <p class="fst-italic">
-              <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua. -->
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>07th September 1993</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://amilasilva7.github.io/amilaos</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+9477 4244 755</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Kotte, Sri Lanka</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>31</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BSc in Software Engineering (Hons)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>amilasilvapvt@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
+          <div class="badge-float badge-float-1">
+            <span style="font-size:20px">☕</span>
+            <div>
+              <div style="font-size:12px;color:#888;font-weight:400">Language</div>
+              <div>Java Expert</div>
+            </div>
+          </div>
+          <div class="badge-float badge-float-2">
+            <span style="font-size:20px">☁️</span>
+            <div>
+              <div style="font-size:12px;color:#888;font-weight:400">Certified</div>
+              <div>AWS Cloud</div>
+            </div>
+          </div>
+          <div class="badge-float badge-float-3">
+            <span style="font-size:20px">🏆</span>
+            <div>
+              <div style="font-size:12px;color:#888;font-weight:400">Award</div>
+              <div>TechnoSoft '17</div>
+            </div>
+          </div>
+          <div class="badge-float badge-float-4">
+            <span style="font-size:20px">🤖</span>
+            <div>
+              <div style="font-size:12px;color:#888;font-weight:400">AI Fluency</div>
+              <div>MCP Enthusiast</div>
+            </div>
+          </div>
+          <div class="badge-float badge-float-5">
+            <span style="font-size:20px">🧩</span>
+            <div>
+              <div style="font-size:12px;color:#888;font-weight:400">Passion</div>
+              <div>System Design</div>
+            </div>
+          </div>
+          <div class="badge-float badge-float-6">
+            <span style="font-size:20px">🇸🇬</span>
+            <div>
+              <div style="font-size:12px;color:#888;font-weight:400">Currently</div>
+              <div>Singapore</div>
             </div>
           </div>
         </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-            <p>I solve problems the right way, not just the easy way. Passionate about clean code, efficiency, and business- driven solutions, I thrive in collaborative, fast-paced environments. If you need an engineer who delivers impact, ensures quality, and solves real-world challenges, I’m the right choice.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>BSc (Hons) in Software Engineering</h4>
-              <h5>2017 - 2022</h5>
-              <p><em>Cardiff Metropolitan University, United Kingdom</em></p>
-              <p>Second Class Upper</p>
-            </div>
-            <div class="resume-item">
-              <h4>Certification in Java Standalone Application Development</h4>
-              <h5>2013 - 2013</h5>
-              <p><em>Java Institute, SriLanka</em></p>
-              <p>Successfully Completed</p>
-            </div>
-            <div class="resume-item">
-              <h4>Advanced Level Examination - Commerce Stream</h4>
-              <h5>2010 - 2012</h5>
-              <p><em>Bingiriya, SriLanka</em></p>
-              <p>Accounting, Economics, Business Studies</p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Senior Software Engineer</h4>
-              <h5>April 2024 – Present</h5>
-              <p><em><strong>Intervest Software Technologies</strong>, Colombo, SriLanka</em></p>
-              <ul>
-                <li>Upgraded Java 11 → 21 and Spring Boot 2 → 3 cutting 70% security vulnerabilities while leading a sub-squad.</li>
-                <li>Assisted in architecture a PCW engine, providing insights and written Swagger API contacts.</li>
-                <li>Played a key role in closing a live project with 0% customer complaints.</li>
-                <li>Assisted in replacing Ctalk telephony integration with CXone for improved system efficiency.</li>
-                <li>Integration of AWS KMS and AWS SM to securely store secret keys.</li>
-                <li>As a Senior Software Engineer, collaborated across multiple squads to contribute to various developments.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Software Engineer</h4>
-              <h5>September 2021 – April 2024</h5>
-              <p><em><strong>Intervest Software Technologies</strong>, Colombo, SriLanka</em></p>
-              <ul>
-                <li>Developed and maintained features for Petgevity, Wapp, and Staysure, periodically shifting between projects as needed.</li>
-                <li>Gained code quality by integrated SonarQube, achieving 80%+ code quality.</li>
-                <li>Built an email tracking system (AWS SES & SNS), reducing 100% email-related support queries.</li>
-                <li>Fixed critical security vulnerabilities and improved system reliability.</li>
-                <li>Researched & implemented unit, integration, and mock testing, increasing test coverage by 10%.</li>
-                <li>Worked within Squads and Tribes while following Scrum and Kanban Agile frameworks to deliver high-quality software solutions.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Associate Software Engineer</h4>
-              <h5>March 2020 - September 2021</h5>
-              <p><em><strong>Intervest Software Technologies</strong>, Colombo, SriLanka</em></p>
-              <ul>
-                <li>Developed Jasper reports, develop email sending functionalities, and REST APIs.</li>
-                <li>Worked with AWS SES, AWS CloudWatch, Jenkins, Liquibase, and Linux/Unix servers.</li>
-                <li>Worked with Unix/ Linux servers, used AWS services, and performed deployments, and system operations under supervisors. </li>
-                <li>Assisted in design, implementation, load testing, and maintenance.</li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-          <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-            <h3 class="resume-title">Certifications</h3>
-            <div class="resume-item">
-              <h4>Coracle Certified Proffessional Java Developer</h4>
-              <h5>2025</h5>
-              <p><em>Oracle</em></p>
-              <p><a src="https://catalog-education.oracle.com/ords/certview/sharebadge?id=8D59871FBA7EE856B1733BFE4F98872B60D27D1B591BA09C56BDCECB14AC8EAA">Show Credentials</a></p>
-            </div>
-            <div class="resume-item">
-              <h4>AWS Cloud Practitioner</h4>
-              <h5>2025</h5>
-              <p><em>Oracle</em></p>
-              <p><a src="https://catalog-education.oracle.com/ords/certview/sharebadge?id=8D59871FBA7EE856B1733BFE4F98872B60D27D1B591BA09C56BDCECB14AC8EAA">Show Credentials</a></p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="techstack" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>I work with a diverse set of technologies to build scalable, efficient, and secure solutions. My expertise spans backend development, cloud computing, DevOps, and security. Here are some of the key technologies I use:</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/spring_boot.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/java.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/oracle.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/aws.png">
-          </div>
-        </div>
-        <div class="row" >
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/jasper.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/git.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/docker.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/jenkins.png">
-          </div>
-        </div>
-        <div class="row" >
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/html.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/js.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/junit.png">
-          </div>
-          <div class="col-lg-3 col-md-2 icon-box icon-box-custom" data-aos="fade-up">
-            <img class="img-fluid" src="assets/img/tech/auth2.png">
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>I’m proud to have worked with amazing teams and clients who have shared their experiences with me. Here’s what some of them have to say about my work and dedication:</p>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  As a technical lead, I've had the privilege of observing Amila's work closely, and I can confidently say that he completes tasks with a strong sense of ownership and accountability. Moreover, he excels as a team player, always willing to offer support and guidance to his colleagues. 
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/ruchira.jpeg" class="testimonial-img" alt="">
-                <h3><a href="https://www.linkedin.com/in/ruchiraruwan/">Ruchira Ruwan Gunerathna</a></h3>
-                <h4>Tecnical Lead</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I worked with Amila as a team member for couple of years, and I highly recommend him. He has shown exceptional dedication and hard work during the project that we worked together. Amila is not only proficient as a technical guy, but also showcases a remarkable ability to collaborate within a team.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/imasha.jpeg" class="testimonial-img" alt="">
-                <h3><a href="https://www.linkedin.com/in/imasha-ruhunuwickrama-763a7333">Imasha Ruhunuwickrama</a></h3>
-                <h4>Tecnical Lead</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  From the time I interviewed him for a Java developer until now, we worked together on various projects, he consistently exhibited exceptional problem-solving skills. He is a great team player with excellent attitudes. I endorse Amila for any software engineering endeavors and am confident in his ability to make significant contributions to any project.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/nasmin.jpeg" class="testimonial-img" alt="">
-                <h3><a href="https://www.linkedin.com/in/nasmin0122">Nasmin Ismail</a></h3>
-                <h4>Tecnical Lead</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Amila is a dedicated and skilled developer with strong work ethic. His proficiency in java, coupled with a positive attitude, makes him an asset to any team, consistently delivering high-quality solution ls with enthusiasm and a collaborative spirit. cheers 🥂
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/amara.jpeg" class="testimonial-img" alt="">
-                <h3><a href="https://www.linkedin.com/in/amara-wijesundara-21a79357">Amara Wijesundara</a></h3>
-                <h4>Associate Tecnical Lead</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had the pleasure of working closely with Amila on several projects, and I am continually impressed by his dedication to delivering high-quality software. Amila consistently takes initiative, collaborates effectively with teams, and adapts swiftly to new challenges. I highly recommend Amila as a talented and reliable software developer.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/charutha.jpeg" class="testimonial-img" alt="">
-                <h3><a href="https://www.linkedin.com/in/charutha">Charutha Fonseka</a></h3>
-                <h4>Associate QA Lead</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>I’m always excited to connect with like-minded professionals, businesses, and anyone who’s passionate about technology and innovation. Whether you have a project in mind, need advice on software development, or just want to chat about the latest tech trends, feel free to reach out.</p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Kotte, Sri Lanka</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>amilasilvapvt@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+9477 4 244 755</p>
-              </div>
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
-          </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required disabled>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required disabled>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required disabled>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" placeholder="Email functionality currently unavailabel! " rows="10" required disabled></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit" disabled >Send Message</button></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </div>
+</section>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">I write code that<br><em style="font-style:normal;color:var(--accent)">doesn't apologize.</em></h2>
+        <p>I'm a Senior Software Engineer from Colombo, Sri Lanka, with 6+ years turning complex business problems into elegant, scalable systems. My sweet spot is backend engineering — crafting clean microservices, designing resilient distributed systems, and mentoring teams to ship confidently.</p>
+        <p>Whether I'm tracing a root cause in DataDog at 2am or designing a new service integration from scratch, I bring the same energy: methodical, optimistic, and relentlessly focused on impact. I'm a passionate system design enthusiast — always studying how large-scale systems work under the hood.</p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="hi-num">70%</div>
+            <div class="hi-label">Vulnerability reduction after migration sprint</div>
+          </div>
+          <div class="highlight-item">
+            <div class="hi-num">99.9%</div>
+            <div class="hi-label">Uptime maintained across production systems</div>
+          </div>
+          <div class="highlight-item">
+            <div class="hi-num">80%+</div>
+            <div class="hi-label">Code quality scores via SonarQube</div>
+          </div>
+          <div class="highlight-item">
+            <div class="hi-num">20%</div>
+            <div class="hi-label">SDLC efficiency improvement</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal reveal-delay-2">
+        <div class="glass-card about-card">
+          <div class="about-card-icon">🎯</div>
+          <h4>Deep Technical Focus</h4>
+          <p>I specialise in microservices architecture, cloud scaling and production incident response — the hard problems nobody wants to touch.</p>
+        </div>
+        <div class="glass-card about-card">
+          <div class="about-card-icon">🤝</div>
+          <h4>Team Multiplier</h4>
+          <p>Mentoring junior devs, conducting code reviews, and leading Agile ceremonies — I raise the floor for everyone around me.</p>
+        </div>
+        <div class="glass-card about-card">
+          <div class="about-card-icon">📚</div>
+          <h4>Perpetual Learner</h4>
+          <p>BSc Software Engineering (3.6 GPA, Cardiff Met), StackOverflow volunteer, Toastmasters member, AI Fluency certified, and published author on the Model Context Protocol.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Career Journey</p>
+      <h2 class="section-title">Where I've Built<br><em style="color:var(--accent);font-style:normal">Real Things.</em></h2>
+    </div>
+    <div class="timeline" style="margin-top:56px;">
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-dot"></div>
+        <div class="glass-card exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Software Engineer</div>
+              <div class="exp-company" style="display:flex;align-items:center;gap:8px;">Singapore Tech Company <span style="font-size:12px;background:rgba(27,122,110,0.1);color:var(--teal);padding:2px 10px;border-radius:100px;font-weight:500;">Confidential</span></div>
+            </div>
+            <div class="exp-date">Mar 2026 – Present 🇸🇬</div>
+          </div>
+          <p class="exp-desc">Software Engineer at a Singapore-based company, working within a familiar Java/Spring Boot/AWS ecosystem. Applying proven backend engineering skills to new challenges in a new market context, leveraging modern AI assistant tooling to boost productivity and code quality.</p>
+          <div class="exp-tags">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag teal">AWS</span><span class="tag teal">Microservices</span><span class="tag gold">AI-Assisted Dev</span>
+          </div>
+        </div>
+      </div>
 
+      <div class="timeline-item reveal reveal-delay-1" style="opacity:0.9;">
+        <div class="timeline-dot" style="background:var(--gold-light);box-shadow:0 0 0 3px var(--gold-light);"></div>
+        <div class="glass-card exp-card" style="border:1px dashed rgba(212,168,67,0.35);background:rgba(255,248,230,0.5);">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role" style="color:var(--ink-light);">Career Development Period</div>
+              <div class="exp-company" style="color:var(--gold);">Intentional Growth · Self-directed</div>
+            </div>
+            <div class="exp-date">Oct 2025 – Mar 2026</div>
+          </div>
+          <p class="exp-desc">A deliberate period of upskilling and preparation before transitioning into a new role. Focused on system design deepening, algorithm practice, AI fluency (completed <em>AI Fluency: Framework & Foundations</em>), and published a technical article on the <a href="https://medium.com/@amilasilvapvt/how-the-model-context-protocol-is-about-to-reshape-the-way-humanity-buys-sells-and-lives-104be36ddef3" target="_blank" style="color:var(--accent);font-weight:600;">Model Context Protocol on Medium</a> — exploring how MCP is reshaping commerce and human interaction.</p>
+          <div class="exp-tags">
+            <span class="tag gold">AI Fluency Cert.</span><span class="tag gold">System Design</span><span class="tag gold">Technical Writing</span><span class="tag gold">MCP Research</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-dot" style="background:var(--accent);box-shadow:0 0 0 3px var(--accent);"></div>
+        <div class="glass-card exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Senior Software Engineer</div>
+              <div class="exp-company">Intervest Software Technologies</div>
+            </div>
+            <div class="exp-date">Apr 2024 – Oct 2025</div>
+          </div>
+          <p class="exp-desc">Led migration of legacy Spring Boot microservices (cutting vulnerabilities by 70%), architected full-stack features for 100K+ concurrent users, and directed incident response to maintain 99.9% uptime. Integrated Barclay, Revo, Salesforce, and AWS services. Mentored junior engineers and optimised SDLC efficiency by 20%.</p>
+          <div class="exp-tags">
+            <span class="tag">Java</span><span class="tag">Spring Boot 3.x</span><span class="tag">ReactJS</span>
+            <span class="tag teal">AWS</span><span class="tag teal">DataDog</span>
+            <span class="tag gold">Salesforce</span><span class="tag gold">Agile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-dot"></div>
+        <div class="glass-card exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Software Engineer</div>
+              <div class="exp-company">Intervest Software Technologies</div>
+            </div>
+            <div class="exp-date">Oct 2021 – Mar 2024</div>
+          </div>
+          <p class="exp-desc">Engineered email tracking system via AWS SES/SNS (eliminating 100% of email support queries), built scalable microservices with 80%+ SonarQube quality, increased test coverage by 10%, and refactored three microservices to resolve hundreds of quality issues.</p>
+          <div class="exp-tags">
+            <span class="tag">Spring Boot</span><span class="tag">Swagger</span><span class="tag">JUnit</span>
+            <span class="tag teal">AWS SES/SNS</span><span class="tag gold">SonarQube</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-3">
+        <div class="timeline-dot"></div>
+        <div class="glass-card exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Associate Software Engineer</div>
+              <div class="exp-company">Intervest Software Technologies</div>
+            </div>
+            <div class="exp-date">Mar 2020 – Sep 2021</div>
+          </div>
+          <p class="exp-desc">Built REST APIs integrating AWS SES/SNS/Cognito, architected Spring Boot microservices end-to-end, and reduced manual reporting time by 100% via automated Jasper report modules. Full ownership of SDLC stages from design to production.</p>
+          <div class="exp-tags">
+            <span class="tag">REST APIs</span><span class="tag">Gradle</span>
+            <span class="tag teal">AWS Cognito</span><span class="tag gold">Jasper Reports</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-4">
+        <div class="timeline-dot"></div>
+        <div class="glass-card exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Software Engineer Intern</div>
+              <div class="exp-company">Auradot (Pvt) Ltd</div>
+            </div>
+            <div class="exp-date">May 2019 – Mar 2020</div>
+          </div>
+          <p class="exp-desc">Built a Business Intelligence web service delivering real-time dashboards to directors, full-stack admin portals for 10+ managers, a multi-tenant student management system in Laravel, and a Smart Home web application.</p>
+          <div class="exp-tags">
+            <span class="tag">Spring Boot</span><span class="tag">React</span>
+            <span class="tag gold">Laravel</span><span class="tag gold">PHP</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label">Technical Arsenal</p>
+      <h2 class="section-title">The Tools I<br><em style="color:var(--accent);font-style:normal">Wield Daily.</em></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="glass-card skill-category reveal reveal-delay-1">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon orange">☕</div>
+          <div class="skill-cat-name">Core Java / Backend</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Java 21</span>
+          <span class="skill-pill">Spring Boot</span>
+          <span class="skill-pill">Spring MVC</span>
+          <span class="skill-pill">Spring Security</span>
+          <span class="skill-pill">Spring Data</span>
+          <span class="skill-pill">Hibernate / JPA</span>
+          <span class="skill-pill">REST APIs</span>
+          <span class="skill-pill">Microservices</span>
+          <span class="skill-pill">Apache Kafka</span>
+          <span class="skill-pill">JUnit / Mockito</span>
+          <span class="skill-pill">Stream API</span>
+          <span class="skill-pill">Concurrent API</span>
+        </div>
+      </div>
+      <div class="glass-card skill-category reveal reveal-delay-2">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon teal">☁️</div>
+          <div class="skill-cat-name">Cloud & AWS</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">AWS EC2</span>
+          <span class="skill-pill">ECS</span>
+          <span class="skill-pill">Lambda</span>
+          <span class="skill-pill">SQS</span>
+          <span class="skill-pill">SNS</span>
+          <span class="skill-pill">SES</span>
+          <span class="skill-pill">CloudWatch</span>
+          <span class="skill-pill">Cognito</span>
+          <span class="skill-pill">EKS</span>
+          <span class="skill-pill">Kubernetes</span>
+          <span class="skill-pill">CI/CD Pipelines</span>
+          <span class="skill-pill">Jenkins</span>
+        </div>
+      </div>
+      <div class="glass-card skill-category reveal reveal-delay-3">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon gold">🗄️</div>
+          <div class="skill-cat-name">Databases</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Oracle SQL</span>
+          <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">PostgreSQL</span>
+          <span class="skill-pill">MongoDB</span>
+          <span class="skill-pill">Redis</span>
+          <span class="skill-pill">Query Optimisation</span>
+          <span class="skill-pill">Data Migration</span>
+        </div>
+      </div>
+      <div class="glass-card skill-category reveal reveal-delay-1">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon orange">⚛️</div>
+          <div class="skill-cat-name">Frontend & Full-Stack</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">ReactJS</span>
+          <span class="skill-pill">TypeScript</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">Angular</span>
+          <span class="skill-pill">HTML5 / CSS3</span>
+          <span class="skill-pill">Laravel</span>
+          <span class="skill-pill">Python</span>
+        </div>
+      </div>
+      <div class="glass-card skill-category reveal reveal-delay-2">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon teal">🛠️</div>
+          <div class="skill-cat-name">DevOps & Tools</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Git / Bitbucket</span>
+          <span class="skill-pill">SonarQube</span>
+          <span class="skill-pill">Maven / Gradle</span>
+          <span class="skill-pill">IntelliJ IDEA</span>
+          <span class="skill-pill">DataDog</span>
+          <span class="skill-pill">Swagger</span>
+          <span class="skill-pill">Agile / Scrum</span>
+        </div>
+      </div>
+      <div class="glass-card skill-category reveal reveal-delay-3">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon gold">🔗</div>
+          <div class="skill-cat-name">Integrations</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Salesforce</span>
+          <span class="skill-pill">Barclay Payment</span>
+          <span class="skill-pill">Revo</span>
+          <span class="skill-pill">CxOne</span>
+          <span class="skill-pill">Earnix</span>
+          <span class="skill-pill">Third-party APIs</span>
+          <span class="skill-pill">OAuth 2.0</span>
+        </div>
+      </div>
+      <div class="glass-card skill-category reveal reveal-delay-1" style="grid-column: 1 / -1; max-width: 380px; margin: 0 auto; width: 100%;">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon orange">🤖</div>
+          <div class="skill-cat-name">AI Fluency & Productivity</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">AI Fluency: Framework & Foundations</span>
+          <span class="skill-pill">MCP (Model Context Protocol)</span>
+          <span class="skill-pill">Prompt Engineering</span>
+          <span class="skill-pill">AI-Assisted Development</span>
+          <span class="skill-pill">Technical Writing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Systems Built.<br><em style="color:var(--accent);font-style:normal">Problems Solved.</em></h2>
+      <p class="section-sub" style="margin:0 auto 56px;">Production systems serving real customers across the UK insurance market and beyond.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="glass-card project-card reveal reveal-delay-1">
+        <div class="project-icon orange">🐾</div>
+        <h3>Petgevity.co.uk</h3>
+        <p>UK pet insurance platform built on microservices, supporting customers and agents. Integrated Salesforce, Earnix, CxOne. Part of L3 production support team maintaining high availability.</p>
+        <div class="exp-tags" style="margin-top:12px;"><span class="tag">Spring Boot</span><span class="tag teal">AWS</span><span class="tag gold">Salesforce</span></div>
+        <a href="http://petgevity.co.uk" target="_blank" class="project-link">Visit Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="glass-card project-card reveal reveal-delay-2">
+        <div class="project-icon teal">✈️</div>
+        <p>Travel insurance platform offering instant auto-cover purchases. Mobile app + multi-interface system with REST API design, Salesforce/Earnix integration, and L3 production support.</p>
+        <div class="exp-tags" style="margin-top:12px;"><span class="tag">Microservices</span><span class="tag teal">REST APIs</span><span class="tag gold">Earnix</span></div>
+        <a href="http://www.wapp.com" target="_blank" class="project-link">Visit Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="glass-card project-card reveal reveal-delay-3">
+        <div class="project-icon gold">🌍</div>
+        <h3>Staysure.com</h3>
+        <p>UK's leading travel insurance provider for older travellers. Contributed new product features, optimised API response times, resolved production issues, and reduced bugs via data migration.</p>
+        <div class="exp-tags" style="margin-top:12px;"><span class="tag">Java</span><span class="tag teal">AWS</span><span class="tag gold">Query Opt.</span></div>
+        <a href="http://www.staysure.com" target="_blank" class="project-link">Visit Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="glass-card project-card reveal reveal-delay-1">
+        <div class="project-icon orange">📧</div>
+        <h3>Email Tracking System</h3>
+        <p>Microservice sending dynamic emails and tracking customer interactions post-delivery. Integrated AWS SES config sets + SNS triggers, scheduled jobs, and daily stakeholder reports.</p>
+        <div class="exp-tags" style="margin-top:12px;"><span class="tag teal">AWS SES</span><span class="tag teal">SNS</span><span class="tag">Spring Boot</span></div>
+      </div>
+      <div class="glass-card project-card reveal reveal-delay-2">
+        <div class="project-icon teal">💳</div>
+        <h3>Revo & CXOne Integration</h3>
+        <p>Migrated payment gateway and telephony platform for the Petgevity agent application. Led architecture design, drew diagrams for third parties, implemented gateway, collaborated with QA.</p>
+        <div class="exp-tags" style="margin-top:12px;"><span class="tag">Architecture</span><span class="tag gold">Revo</span><span class="tag gold">CXOne</span></div>
+      </div>
+      <div class="glass-card project-card reveal reveal-delay-3">
+        <div class="project-icon gold">🚀</div>
+        <h3>Spring Boot 2→3 Migration</h3>
+        <p>Led migration of multiple microservices from Spring Boot 2.x/Java 11 to 3.x/Java 21. Organised migration plan, mentored juniors, reviewed code, collaborated with QA and cross-functional teams.</p>
+        <div class="exp-tags" style="margin-top:12px;"><span class="tag">Java 21</span><span class="tag">Spring Boot 3</span><span class="tag gold">Leadership</span></div>
+      </div>
+      <div class="glass-card project-card reveal reveal-delay-1" style="border-left: 3px solid var(--teal);">
+        <div class="project-icon teal">📝</div>
+        <h3>MCP Article · Medium</h3>
+        <p>Published a technical thought-leadership article exploring how the <strong>Model Context Protocol</strong> is set to reshape the way humanity buys, sells, and lives — covering agentic AI, commerce, and human interaction at scale.</p>
+        <div class="exp-tags" style="margin-top:12px;"><span class="tag teal">MCP</span><span class="tag teal">Agentic AI</span><span class="tag gold">Technical Writing</span></div>
+        <a href="https://medium.com/@amilasilvapvt/how-the-model-context-protocol-is-about-to-reshape-the-way-humanity-buys-sells-and-lives-104be36ddef3" target="_blank" class="project-link">Read on Medium <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ── -->
+<section id="certifications">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title">Certified &<br><em style="color:var(--accent);font-style:normal">Recognised.</em></h2>
+    </div>
+    <div class="cert-grid">
+      <div class="glass-card cert-card reveal reveal-delay-1">
+        <div class="cert-badge aws">☁️</div>
+        <div class="cert-info">
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <p>Amazon Web Services · Sep 2025</p>
+          <a href="https://www.credly.com/badges/7f999dd0-1ee7-4de4-9b71-9c08f25ebc64" target="_blank">View Badge <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>
+        </div>
+      </div>
+      <div class="glass-card cert-card reveal reveal-delay-2">
+        <div class="cert-badge oracle">☕</div>
+        <div class="cert-info">
+          <h3>Oracle Certified Professional Java Developer</h3>
+          <p>Oracle · May 2025</p>
+          <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=8D59871FBA7EE856B1733BFE4F98872B60D27D1B591BA09C56BDCECB14AC8EAA" target="_blank">View Badge <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>
+        </div>
+      </div>
+      <div class="glass-card cert-card reveal reveal-delay-3">
+        <div class="cert-badge award">🏆</div>
+        <div class="cert-info">
+          <h3>Winner – Console Application Development</h3>
+          <p>TechnoSoft 2017 · SLIATE, Sri Lanka</p>
+          <a href="https://colombo.sliate.ac.lk/read/inauguration-ceremony-and-exhibition-technosoft-2017" target="_blank">View Award <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>
+        </div>
+      </div>
+      <div class="glass-card cert-card reveal reveal-delay-4">
+        <div class="cert-badge volunteer">🎓</div>
+        <div class="cert-info">
+          <h3>BSc Software Engineering – 3.6 GPA</h3>
+          <p>Cardiff Metropolitan University · 2021–2022, UK</p>
+          <a href="https://www.cardiff.ac.uk/" target="_blank">University <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>
+        </div>
+      </div>
+      <div class="glass-card cert-card reveal reveal-delay-1" style="border-left:3px solid var(--teal);">
+        <div class="cert-badge" style="background:linear-gradient(135deg,rgba(27,122,110,0.15),rgba(27,122,110,0.28));">🤖</div>
+        <div class="cert-info">
+          <h3>AI Fluency: Framework &amp; Foundations</h3>
+          <p>Online Course · Completed 2025–2026</p>
+          <span style="font-size:12px;color:var(--teal);font-weight:600;">Certified ✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials" style="background:linear-gradient(180deg,transparent,rgba(200,98,42,0.03),transparent);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label">What Others Say</p>
+      <h2 class="section-title">Trusted by<br><em style="color:var(--accent);font-style:normal">Great Teams.</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="glass-card testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Amila has an exceptional ability to take ownership of critical production incidents. He identified root causes under immense pressure and kept systems at 99.9% uptime quarter after quarter. A rare calibre of engineer.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨‍💼</div>
+          <div>
+            <div class="author-name">Engineering Lead</div>
+            <div class="author-role">Intervest Software Technologies</div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">The Spring Boot 3 migration was one of the most complex cross-team initiatives we'd run. Amila organized the plan, kept everyone aligned, and mentored the juniors throughout. He made a daunting project feel manageable.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩‍💻</div>
+          <div>
+            <div class="author-name">Senior Developer</div>
+            <div class="author-role">Platform Team</div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Amila's code review feedback accelerated my growth more than any training I'd taken. He combines deep technical knowledge with a patience and clarity that's rare. He makes the entire team around him better.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🧑‍💻</div>
+          <div>
+            <div class="author-name">Junior Engineer</div>
+            <div class="author-role">Mentee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Let's Build<br><em style="color:var(--accent);font-style:normal">Something Great.</em></h2>
+        <p style="font-size:17px;color:var(--ink-light);margin-bottom:40px;line-height:1.75;">Open to Senior Software Engineer and Lead roles — remote, hybrid, or on-site across Asia and Europe. I bring deep Java/AWS expertise and a collaborative spirit to every team I join.</p>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-item-text">
+            <h4>Email</h4>
+            <a href="mailto:amilasilvase@gmail.com">amilasilvase@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-item-text">
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/94767074781" target="_blank">+94 767 074 781</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-item-text">
+            <h4>Location</h4>
+            <p>Colombo, Sri Lanka 🇱🇰</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/amilasilva7" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://stackoverflow.com/users/11867963/amila-os" target="_blank" class="social-link"><i class="fab fa-stack-overflow"></i></a>
+          <a href="mailto:amilasilvase@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/94767074781" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="glass-card contact-form">
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;margin-bottom:24px;">Send a Message</h3>
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input id="cf-name" type="text" placeholder="Jane Smith" autocomplete="name">
+            <span class="field-error" id="err-name"></span>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input id="cf-email" type="email" placeholder="jane@company.com" autocomplete="email">
+            <span class="field-error" id="err-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="cf-subject">Subject</label>
+            <input id="cf-subject" type="text" placeholder="Senior Engineer role at Acme Corp">
+            <span class="field-error" id="err-subject"></span>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" placeholder="Tell me about the opportunity…"></textarea>
+            <span class="field-error" id="err-message"></span>
+          </div>
+          <button class="btn-primary" id="cf-submit" style="width:100%;justify-content:center;border:none;cursor:pointer;" onclick="handleSend()">Send Message <i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Amila Silva</div>
+    <div class="footer-tagline">Senior Software Engineer · Java · Spring Boot · AWS · Sri Lanka 🇱🇰 · Singapore 🇸🇬</div>
+    <div class="social-links" style="justify-content:center;">
+      <a href="https://www.linkedin.com/in/amilasilva7" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://stackoverflow.com/users/11867963/amila-os" target="_blank" class="social-link"><i class="fab fa-stack-overflow"></i></a>
+      <a href="mailto:amilasilvase@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+    </div>
+    <div class="footer-copy">© 2026 Amila Silva. Crafted with ☕ Java and a lot of optimism.</div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Skill pill hover
+  document.querySelectorAll('.skill-pill').forEach(pill => {
+    pill.addEventListener('mouseenter', function() {
+      this.style.transition = 'all 0.25s cubic-bezier(0.34,1.56,0.64,1)';
+    });
+  });
+
+  // ─── FORM VALIDATION ───
+  function getField(id) { return document.getElementById(id); }
+  function getErr(id)   { return document.getElementById(id); }
+
+  function showError(fieldId, errId, msg) {
+    const f = getField(fieldId), e = getErr(errId);
+    f.classList.add('invalid'); f.classList.remove('valid');
+    e.textContent = msg; e.classList.add('visible');
+  }
+  function clearError(fieldId, errId) {
+    const f = getField(fieldId), e = getErr(errId);
+    f.classList.remove('invalid'); f.classList.add('valid');
+    e.textContent = ''; e.classList.remove('visible');
+  }
+
+  // Live validation on blur
+  getField('cf-name').addEventListener('blur', () => {
+    const v = getField('cf-name').value.trim();
+    if (!v) showError('cf-name','err-name','Please enter your name.');
+    else if (v.length < 2) showError('cf-name','err-name','Name must be at least 2 characters.');
+    else clearError('cf-name','err-name');
+  });
+  getField('cf-email').addEventListener('blur', () => {
+    const v = getField('cf-email').value.trim();
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!v) showError('cf-email','err-email','Please enter your email address.');
+    else if (!re.test(v)) showError('cf-email','err-email','Please enter a valid email (e.g. jane@company.com).');
+    else clearError('cf-email','err-email');
+  });
+  getField('cf-subject').addEventListener('blur', () => {
+    const v = getField('cf-subject').value.trim();
+    if (!v) showError('cf-subject','err-subject','Please add a subject.');
+    else if (v.length < 5) showError('cf-subject','err-subject','Subject should be at least 5 characters.');
+    else clearError('cf-subject','err-subject');
+  });
+  getField('cf-message').addEventListener('blur', () => {
+    const v = getField('cf-message').value.trim();
+    if (!v) showError('cf-message','err-message','Please write a short message.');
+    else if (v.length < 20) showError('cf-message','err-message','Message is too short — at least 20 characters please.');
+    else clearError('cf-message','err-message');
+  });
+
+  // Remove error styling on input
+  ['cf-name','cf-email','cf-subject','cf-message'].forEach(id => {
+    getField(id).addEventListener('input', () => {
+      getField(id).classList.remove('invalid');
+    });
+  });
+
+  function handleSend() {
+    const name    = getField('cf-name').value.trim();
+    const email   = getField('cf-email').value.trim();
+    const subject = getField('cf-subject').value.trim();
+    const message = getField('cf-message').value.trim();
+    const re      = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let valid = true;
+
+    if (!name || name.length < 2)        { showError('cf-name','err-name','Please enter your name (min 2 chars).'); valid = false; }
+    else                                   clearError('cf-name','err-name');
+    if (!email)                            { showError('cf-email','err-email','Please enter your email address.'); valid = false; }
+    else if (!re.test(email))              { showError('cf-email','err-email','Please enter a valid email address.'); valid = false; }
+    else                                   clearError('cf-email','err-email');
+    if (!subject || subject.length < 5)   { showError('cf-subject','err-subject','Please add a subject (min 5 chars).'); valid = false; }
+    else                                   clearError('cf-subject','err-subject');
+    if (!message || message.length < 20)  { showError('cf-message','err-message','Please write a message (min 20 chars).'); valid = false; }
+    else                                   clearError('cf-message','err-message');
+
+    if (!valid) return;
+
+    const btn = document.getElementById('cf-submit');
+    btn.innerHTML = '✓ Opening Email Client… <i class="fas fa-check"></i>';
+    btn.style.background = 'linear-gradient(135deg, var(--teal), var(--teal-light))';
+    btn.disabled = true;
+
+    const body = encodeURIComponent('Hi Amila,\n\n' + message + '\n\nBest regards,\n' + name);
+    const mailto = 'mailto:amilasilvase@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+    setTimeout(() => { window.location.href = mailto; }, 400);
+
+    setTimeout(() => {
+      btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
 </body>
-
 </html>
-
